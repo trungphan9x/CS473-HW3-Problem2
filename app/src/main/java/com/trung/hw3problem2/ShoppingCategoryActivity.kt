@@ -1,5 +1,6 @@
 package com.trung.hw3problem2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,8 +20,14 @@ class ShoppingCategoryActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.imageView1 -> Toast.makeText(this, "You have chosen the Electronic category of shopping", Toast.LENGTH_LONG).show()
-            R.id.imageView2 -> Toast.makeText(this, "You have chosen the Clothing category of shopping", Toast.LENGTH_LONG).show()
+            R.id.imageView1 -> {
+                Toast.makeText(this, "You have chosen the Electronic category of shopping", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, ElectronicActivity::class.java))
+            }
+            R.id.imageView2 -> {
+                Toast.makeText(this, "You have chosen the Clothing category of shopping", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, ClothingActivity::class.java))
+            }
             R.id.imageView3 -> Toast.makeText(this, "You have chosen the Beauty category of shopping", Toast.LENGTH_LONG).show()
             R.id.imageView4 -> Toast.makeText(this, "You have chosen the Food category of shopping", Toast.LENGTH_LONG).show()
         }
